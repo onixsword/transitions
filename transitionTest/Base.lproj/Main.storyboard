@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="transitionTest" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +20,76 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qLa-zY-62m">
+                                <rect key="frame" x="0.0" y="20" width="375" height="567"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yRp-UI-bes">
+                                        <rect key="frame" x="111.5" y="134" width="152" height="298.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="250"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstItem="yRp-UI-bes" firstAttribute="centerY" secondItem="qLa-zY-62m" secondAttribute="centerY" id="bBT-fn-hNK"/>
+                                    <constraint firstItem="yRp-UI-bes" firstAttribute="centerX" secondItem="qLa-zY-62m" secondAttribute="centerX" id="jUg-cP-l5e"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="xVD-da-Baz" appends="YES" id="Xsh-kI-6n1"/>
+                                    <outletCollection property="gestureRecognizers" destination="Z0B-8P-faM" appends="YES" id="ST9-3k-lRh"/>
+                                    <outletCollection property="gestureRecognizers" destination="uY0-V6-gso" appends="YES" id="TCO-eu-Mgk"/>
+                                    <outletCollection property="gestureRecognizers" destination="3zo-te-82s" appends="YES" id="GVd-pK-JJR"/>
+                                </connections>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ait-Ms-iMK">
+                                <rect key="frame" x="164" y="616" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="tap_Transition:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LKB-M4-S7e"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="qLa-zY-62m" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="98R-rF-5PO"/>
+                            <constraint firstItem="Ait-Ms-iMK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ASh-X5-Sbn"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="qLa-zY-62m" secondAttribute="bottom" constant="80" id="Las-cL-40w"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Ait-Ms-iMK" secondAttribute="bottom" constant="21" id="iKQ-4W-GjY"/>
+                            <constraint firstItem="qLa-zY-62m" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="roK-r5-BvP"/>
+                            <constraint firstAttribute="trailing" secondItem="qLa-zY-62m" secondAttribute="trailing" id="tDW-56-ElD"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="lbl_contador" destination="yRp-UI-bes" id="wrj-Az-XlU"/>
+                        <outlet property="vw_LabelContainer" destination="qLa-zY-62m" id="dtB-6z-UM8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" id="xVD-da-Baz" userLabel="toLeft">
+                    <connections>
+                        <action selector="toLeft:" destination="BYZ-38-t0r" id="x8R-qO-F5R"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="Z0B-8P-faM" userLabel="toRight">
+                    <connections>
+                        <action selector="toRight:" destination="BYZ-38-t0r" id="IXX-u3-Bf9"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="up" id="uY0-V6-gso" userLabel="toTop">
+                    <connections>
+                        <action selector="toTop:" destination="BYZ-38-t0r" id="pKG-ad-SQd"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="down" id="3zo-te-82s" userLabel="toDown">
+                    <connections>
+                        <action selector="toDown:" destination="BYZ-38-t0r" id="HVN-Qu-8Db"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="-98.400000000000006" y="123.68815592203899"/>
         </scene>
     </scenes>
 </document>
